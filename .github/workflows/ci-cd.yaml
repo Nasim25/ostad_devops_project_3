@@ -31,7 +31,7 @@ jobs:
           path: test-results.txt
 
   deploy:
-    runs-on: self-hosted
+    runs-on: [self-hosted, Linux, X64]
     needs: test
     steps:
       - name: Checkout code
@@ -52,5 +52,6 @@ jobs:
       - name: Start application
         run: |
           pm2 delete "project_3" || true
-          pm2 start "npm run start" --name "project_3"
+          pm2 start npm --name "project_3" -- run start
+
 
