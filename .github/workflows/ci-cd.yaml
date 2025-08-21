@@ -52,7 +52,7 @@ jobs:
       - name: Start application
         run: |
           pm2 delete "project_3" || true
-          pm2 start "npm start" --name "project_3"
+          pm2 start npm --name "project_3" -- run start
           pm2 save
 
 
