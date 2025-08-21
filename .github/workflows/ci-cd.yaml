@@ -22,7 +22,7 @@ jobs:
 
       - name: Run tests
         run: |
-          npm test > test-results.txt 2>&1 || true
+          npm run check > test-results.txt 2>&1 || true
 
       - name: Upload test results artifact
         uses: actions/upload-artifact@v4
